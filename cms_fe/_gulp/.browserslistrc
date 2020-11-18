@@ -1,0 +1,7 @@
+# Browsers that we support
+
+> 2%
+last 2 major versions
+ie >= 11
+android >= 4.3.3
+
