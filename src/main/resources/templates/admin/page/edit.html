@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<title>AdminLTE 3 | Starter</title>
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="/css/font-awesome/css/all.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="/css/adminlte.min.css">
+<!-- Google Font: Source Sans Pro -->
+<link
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
+	rel="stylesheet">
+</head>
+<body>
+
+
+
+	<!-- Navbar -->
+	<div sec:authorize="isAuthenticated()">
+		<div th:replace="admin/menutop.html"></div>
+
+		<!-- Main Sidebar Container -->
+
+		<div th:replace="admin/menuleft.html"></div>
+	</div>
+	<div class="content-wrapper">
+		<!-- Content Header (Page header) -->
+		<div class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<div th:if="${page.id}">
+							<h1 class="m-0 text-dark">User profile edit</h1>
+						</div>
+						<div th:if="!${page.id}">
+							<h1 class="m-0 text-dark">Add new</h1>
+						</div>
+					</div>
+					<!-- /.col -->
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item active">Starter Page</li>
+						</ol>
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container-fluid -->
+		</div>
+		<!-- /.content-header -->
+
+		<!-- Main content -->
+		<div class="content">
+			<div class="container-fluid">
+				<div class="row">
+					<div>
+
+
+						<div class="card card-primary">
+
+							<!-- /.card-header -->
+							<!-- form start -->
+							<form role="form" th:object="${page}" method="post">
+								<div class="card-body">
+									<div class="form-group">
+										<input type="hidden" class="form-control" id="pageId"
+											th:field="${page.id}" placeholder="id">
+									</div>
+									<div class="form-group">
+										<label for="url">Title</label> <input type="text"
+											class="form-control" id="title" th:field="${page.title}"
+											placeholder="title">
+
+										<p class="alert alert-danger"
+											th:if="${#fields.hasErrors('title')}" th:errors="*{title}" />
+									</div>
+									<div class="form-group">
+										<label for="url">Url</label> <input type="text"
+											class="form-control" id="url" th:field="${page.url}"
+											placeholder="url">
+
+										<p class="alert alert-danger"
+											th:if="${#fields.hasErrors('url')}" th:errors="*{url}" />
+									</div>
+
+									<div class="form-group" th:object="${articleList}">
+									<label for="article">Article</label>
+										<select class="form-control" id="article" name="page.article.id"  th:field="${page.article.id}">
+											<option value=null>Select article</option>
+											<option th:each="articleList : ${articleList}"
+													th:value="${articleList.id}"  
+													th:selected="(${page.article.id} == ${articleList.id})" 
+													
+												th:text="${articleList.title}"></option>
+										</select>
+									
+									</div>
+									<div class="form-group">
+										<input type="checkbox" name="page.isHomepage" th:field="${page.homepage}"/>
+										<label for="article">is HomePage</label>
+										
+									</div>
+								</div>
+								<!-- /.card-body -->
+
+								<div class="card-footer">
+									<button type="submit" class="btn btn-primary">Submit</button>
+								</div>
+							</form>
+						</div>
+
+
+
+					</div>
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container-fluid -->
+		</div>
+		<!-- /.content -->
+	</div>
+	<div th:replace="admin/footer.html"></div>
+</body>
+</html>
