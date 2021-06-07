@@ -1,5 +1,12 @@
 <!-- jQuery -->
 <footer th:fragment="footer">
-
+ <script src="https://cdn.tiny.cloud/1/qeq9hhsw9p2bm27852j4q3dahb1v62c9s6znf4lwegha6z89/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script src="/js/cms.js"></script>
+ <script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+      toolbar_mode: 'floating',
+   });
+  </script>
 </footer>

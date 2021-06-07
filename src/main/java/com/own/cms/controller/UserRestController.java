@@ -5,8 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.catalina.User;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -29,18 +31,18 @@ public class UserRestController {
 	private AppUserRepository userRepo;
 	@Autowired
 	private AppRoleRepository roleRepo;
-		
+	
+	
+	
 	@RequestMapping(value="/admin/user/list", method = RequestMethod.POST)
 	public Map<String, Object> getAllUser(){
 	  
 		List<AppUser> allUser =  userRepo.findAll();
-		
 		ModelMapper modelMapper = new ModelMapper();
 		Type listType = new TypeToken<List<AppUserDTO>>(){}.getType();
 		List<AppUserDTO> userDTOlist =  modelMapper.map(allUser,listType);
 
 	    Map<String,Object> userDTOListMapped = new HashMap<String, Object>();
-	   
 	    userDTOListMapped.put("data", userDTOlist.toArray());
 	    userDTOListMapped.put("recordsTotal", userDTOlist.size());
 	    userDTOListMapped.put("recordsFiltered", userDTOlist.size());

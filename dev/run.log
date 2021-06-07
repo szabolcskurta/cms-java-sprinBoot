@@ -11,446 +11,57 @@ Version:     @project.version@        	Profile: 	@spring.profiles.active@
 Spring Boot: @project.parent.version@ 	Spring: 	@spring-framework.version@
 Hibernate:   @hibernate.version@ 	Thymeleaf: 	@thymeleaf.version@
 
-2020-11-16 13:23:15.291  INFO 3548 --- [  restartedMain] com.own.cms.CmsApplication               : Starting CmsApplication on P11247 with PID 3548 (C:\learning\cms\target\classes started by kurtas in C:\learning\cms)
-2020-11-16 13:23:15.295  INFO 3548 --- [  restartedMain] com.own.cms.CmsApplication               : The following profiles are active: local
-2020-11-16 13:23:15.376  INFO 3548 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-11-16 13:23:15.376  INFO 3548 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-11-16 13:23:16.515  INFO 3548 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-11-16 13:23:16.629  INFO 3548 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97ms. Found 2 JPA repository interfaces.
-2020-11-16 13:23:18.117  INFO 3548 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
-2020-11-16 13:23:18.141  INFO 3548 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-11-16 13:23:18.141  INFO 3548 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-11-16 13:23:18.572  INFO 3548 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-11-16 13:23:18.572  INFO 3548 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3195 ms
-2020-11-16 13:23:18.810  INFO 3548 --- [  restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-11-16 13:23:18.953  INFO 3548 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-11-16 13:23:19.045  WARN 3548 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-11-16 13:23:19.090  INFO 3548 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
-2020-11-16 13:23:19.489  INFO 3548 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-11-16 13:23:19.544  INFO 3548 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@542349d4, org.springframework.security.web.context.SecurityContextPersistenceFilter@e9efc91, org.springframework.security.web.header.HeaderWriterFilter@aa1324d, org.springframework.security.web.authentication.logout.LogoutFilter@31a69ed9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5d3b687c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3b5efadd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@59fef84b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@57f92ac6, org.springframework.security.web.session.SessionManagementFilter@d44b1f1, org.springframework.security.web.access.ExceptionTranslationFilter@265343c5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@766646f5]
-2020-11-16 13:23:19.715  INFO 3548 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-11-16 13:23:20.055  INFO 3548 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-11-16 13:23:20.179  INFO 3548 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
-2020-11-16 13:23:20.264  INFO 3548 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-11-16 13:23:20.332  INFO 3548 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
-2020-11-16 13:23:20.336  INFO 3548 --- [  restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-11-16 13:23:21.368  INFO 3548 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-11-16 13:23:21.377  INFO 3548 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-11-16 13:23:21.951  INFO 3548 --- [  restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-11-16 13:23:21.962  INFO 3548 --- [  restartedMain] com.own.cms.CmsApplication               : Started CmsApplication in 7.442 seconds (JVM running for 8.615)
-2020-11-16 13:25:20.349  INFO 3548 --- [nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-11-16 13:25:20.349  INFO 3548 --- [nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-11-16 13:25:20.359  INFO 3548 --- [nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-Hibernate: select appuser0_.id as id1_1_, appuser0_.email as email2_1_, appuser0_.first_name as first_na3_1_, appuser0_.last_name as last_nam4_1_, appuser0_.password as password5_1_, appuser0_.photo as photo6_1_, appuser0_.username as username7_1_ from app_user appuser0_ where appuser0_.username=?
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
-Hibernate: select appuser0_.id as id1_1_, appuser0_.email as email2_1_, appuser0_.first_name as first_na3_1_, appuser0_.last_name as last_nam4_1_, appuser0_.password as password5_1_, appuser0_.photo as photo6_1_, appuser0_.username as username7_1_ from app_user appuser0_ where appuser0_.username=?
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
-Hibernate: select appuser0_.id as id1_1_, appuser0_.email as email2_1_, appuser0_.first_name as first_na3_1_, appuser0_.last_name as last_nam4_1_, appuser0_.password as password5_1_, appuser0_.photo as photo6_1_, appuser0_.username as username7_1_ from app_user appuser0_ where appuser0_.username=?
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
-Hibernate: select appuser0_.id as id1_1_, appuser0_.email as email2_1_, appuser0_.first_name as first_na3_1_, appuser0_.last_name as last_nam4_1_, appuser0_.password as password5_1_, appuser0_.photo as photo6_1_, appuser0_.username as username7_1_ from app_user appuser0_
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
-Hibernate: select appuser0_.id as id1_1_0_, appuser0_.email as email2_1_0_, appuser0_.first_name as first_na3_1_0_, appuser0_.last_name as last_nam4_1_0_, appuser0_.password as password5_1_0_, appuser0_.photo as photo6_1_0_, appuser0_.username as username7_1_0_, roles1_.users_id as users_id1_2_1_, approle2_.id as roles_id2_2_1_, approle2_.id as id1_0_2_, approle2_.name as name2_0_2_ from app_user appuser0_ left outer join app_user_roles roles1_ on appuser0_.id=roles1_.users_id left outer join app_role approle2_ on roles1_.roles_id=approle2_.id where appuser0_.id=?
-2020-11-16 13:29:42.470 ERROR 3548 --- [nio-8090-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.NoSuchElementException: No value present] with root cause
-
-java.util.NoSuchElementException: No value present
-	at java.util.Optional.get(Optional.java:135) ~[na:1.8.0_251]
-	at com.own.cms.controller.UserController.deleteUser(UserController.java:189) ~[classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.37.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.37.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_251]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
-
-2020-11-16 13:29:42.489 ERROR 3548 --- [nio-8090-exec-9] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8090-exec-9] Exception processing template "error": Error resolving template [error], template might not exist or might not be accessible by any of the configured Template Resolvers
-
-org.thymeleaf.exceptions.TemplateInputException: Error resolving template [error], template might not exist or might not be accessible by any of the configured Template Resolvers
-	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) [spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) [spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) [tomcat-embed-core-9.0.37.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) [tomcat-embed-core-9.0.37.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:84) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) [spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) [spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:348) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:173) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_251]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
-
-2020-11-16 13:29:42.490 ERROR 3548 --- [nio-8090-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] threw exception
-
-org.thymeleaf.exceptions.TemplateInputException: Error resolving template [error], template might not exist or might not be accessible by any of the configured Template Resolvers
-	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.37.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.37.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:84) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:348) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:173) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_251]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
-
-2020-11-16 13:29:42.491 ERROR 3548 --- [nio-8090-exec-9] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing ErrorPage[errorCode=0, location=/error]
-
-org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template [error], template might not exist or might not be accessible by any of the configured Template Resolvers
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.37.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.37.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:84) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:348) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:173) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_251]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.37.jar:9.0.37]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
-Caused by: org.thymeleaf.exceptions.TemplateInputException: Error resolving template [error], template might not exist or might not be accessible by any of the configured Template Resolvers
-	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	... 66 common frames omitted
-
-Hibernate: select appuser0_.id as id1_1_, appuser0_.email as email2_1_, appuser0_.first_name as first_na3_1_, appuser0_.last_name as last_nam4_1_, appuser0_.password as password5_1_, appuser0_.photo as photo6_1_, appuser0_.username as username7_1_ from app_user appuser0_
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
-Hibernate: select appuser0_.id as id1_1_0_, appuser0_.email as email2_1_0_, appuser0_.first_name as first_na3_1_0_, appuser0_.last_name as last_nam4_1_0_, appuser0_.password as password5_1_0_, appuser0_.photo as photo6_1_0_, appuser0_.username as username7_1_0_, roles1_.users_id as users_id1_2_1_, approle2_.id as roles_id2_2_1_, approle2_.id as id1_0_2_, approle2_.name as name2_0_2_ from app_user appuser0_ left outer join app_user_roles roles1_ on appuser0_.id=roles1_.users_id left outer join app_role approle2_ on roles1_.roles_id=approle2_.id where appuser0_.id=?
-Hibernate: select appuser0_.id as id1_1_, appuser0_.email as email2_1_, appuser0_.first_name as first_na3_1_, appuser0_.last_name as last_nam4_1_, appuser0_.password as password5_1_, appuser0_.photo as photo6_1_, appuser0_.username as username7_1_ from app_user appuser0_
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
-Hibernate: select appuser0_.id as id1_1_0_, appuser0_.email as email2_1_0_, appuser0_.first_name as first_na3_1_0_, appuser0_.last_name as last_nam4_1_0_, appuser0_.password as password5_1_0_, appuser0_.photo as photo6_1_0_, appuser0_.username as username7_1_0_, roles1_.users_id as users_id1_2_1_, approle2_.id as roles_id2_2_1_, approle2_.id as id1_0_2_, approle2_.name as name2_0_2_ from app_user appuser0_ left outer join app_user_roles roles1_ on appuser0_.id=roles1_.users_id left outer join app_role approle2_ on roles1_.roles_id=approle2_.id where appuser0_.id=?
-Hibernate: select appuser0_.id as id1_1_, appuser0_.email as email2_1_, appuser0_.first_name as first_na3_1_, appuser0_.last_name as last_nam4_1_, appuser0_.password as password5_1_, appuser0_.photo as photo6_1_, appuser0_.username as username7_1_ from app_user appuser0_
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
-2020-11-16 13:39:34.067  INFO 3548 --- [       Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-11-16 13:39:34.070  INFO 3548 --- [       Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-11-16 13:39:34.073  INFO 3548 --- [       Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-11-16 13:39:34.091  INFO 3548 --- [       Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-
-     ██╗ █████╗ ██╗   ██╗ █████╗      ██████╗███╗   ███╗███████╗
-     ██║██╔══██╗██║   ██║██╔══██╗    ██╔════╝████╗ ████║██╔════╝
-     ██║███████║██║   ██║███████║    ██║     ██╔████╔██║███████╗
-██   ██║██╔══██║╚██╗ ██╔╝██╔══██║    ██║     ██║╚██╔╝██║╚════██║
-╚█████╔╝██║  ██║ ╚████╔╝ ██║  ██║    ╚██████╗██║ ╚═╝ ██║███████║
- ╚════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝     ╚═════╝╚═╝     ╚═╝╚══════╝
-                                                                
-Version:     @project.version@        	Profile: 	@spring.profiles.active@
---------------------------------------------------------------
-Spring Boot: @project.parent.version@ 	Spring: 	@spring-framework.version@
-Hibernate:   @hibernate.version@ 	Thymeleaf: 	@thymeleaf.version@
-
-2020-11-16 13:39:34.374  INFO 3548 --- [  restartedMain] com.own.cms.CmsApplication               : Starting CmsApplication on P11247 with PID 3548 (C:\learning\cms\target\classes started by kurtas in C:\learning\cms)
-2020-11-16 13:39:34.374  INFO 3548 --- [  restartedMain] com.own.cms.CmsApplication               : The following profiles are active: local
-2020-11-16 13:39:34.658  INFO 3548 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-11-16 13:39:34.689  INFO 3548 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31ms. Found 2 JPA repository interfaces.
-2020-11-16 13:39:34.883  INFO 3548 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
-2020-11-16 13:39:34.884  INFO 3548 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-11-16 13:39:34.884  INFO 3548 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-11-16 13:39:34.908  INFO 3548 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-11-16 13:39:34.909  INFO 3548 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 532 ms
-2020-11-16 13:39:34.934  WARN 3548 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [34BCEB694390558EB4DD44FECD9F2571]
-2020-11-16 13:39:34.975  INFO 3548 --- [  restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-11-16 13:39:34.982  INFO 3548 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-11-16 13:39:34.991  INFO 3548 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2020-11-16 13:39:34.995  INFO 3548 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2020-11-16 13:39:34.995  INFO 3548 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
-2020-11-16 13:39:35.013  WARN 3548 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-11-16 13:39:35.076  INFO 3548 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@73ca640c, org.springframework.security.web.context.SecurityContextPersistenceFilter@1ab7d6df, org.springframework.security.web.header.HeaderWriterFilter@48409e12, org.springframework.security.web.authentication.logout.LogoutFilter@79d279d3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@59bb90b4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15de3ee7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@59a28240, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@52f5bf92, org.springframework.security.web.session.SessionManagementFilter@533aed6d, org.springframework.security.web.access.ExceptionTranslationFilter@63cd8573, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@24cfafb6]
-2020-11-16 13:39:35.163  INFO 3548 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-11-16 13:39:35.164  INFO 3548 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-11-16 13:39:35.168  INFO 3548 --- [         task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-11-16 13:39:35.236  INFO 3548 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
-2020-11-16 13:39:35.237  INFO 3548 --- [  restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-11-16 13:39:35.304  INFO 3548 --- [  restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-11-16 13:39:35.308  INFO 3548 --- [  restartedMain] com.own.cms.CmsApplication               : Started CmsApplication in 0.973 seconds (JVM running for 981.961)
-2020-11-16 13:39:35.310  INFO 3548 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2020-11-16 13:58:37.851  INFO 3548 --- [nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-11-16 13:58:37.852  INFO 3548 --- [nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-11-16 13:58:37.856  INFO 3548 --- [nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-Hibernate: select appuser0_.id as id1_1_, appuser0_.email as email2_1_, appuser0_.first_name as first_na3_1_, appuser0_.last_name as last_nam4_1_, appuser0_.password as password5_1_, appuser0_.photo as photo6_1_, appuser0_.username as username7_1_ from app_user appuser0_ where appuser0_.username=?
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
-Hibernate: select appuser0_.id as id1_1_0_, appuser0_.email as email2_1_0_, appuser0_.first_name as first_na3_1_0_, appuser0_.last_name as last_nam4_1_0_, appuser0_.password as password5_1_0_, appuser0_.photo as photo6_1_0_, appuser0_.username as username7_1_0_, roles1_.users_id as users_id1_2_1_, approle2_.id as roles_id2_2_1_, approle2_.id as id1_0_2_, approle2_.name as name2_0_2_ from app_user appuser0_ left outer join app_user_roles roles1_ on appuser0_.id=roles1_.users_id left outer join app_role approle2_ on roles1_.roles_id=approle2_.id where appuser0_.id=?
-Hibernate: delete from app_user_roles where users_id=?
-Hibernate: delete from app_user where id=?
-Hibernate: select appuser0_.id as id1_1_, appuser0_.email as email2_1_, appuser0_.first_name as first_na3_1_, appuser0_.last_name as last_nam4_1_, appuser0_.password as password5_1_, appuser0_.photo as photo6_1_, appuser0_.username as username7_1_ from app_user appuser0_
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
-Hibernate: select roles0_.users_id as users_id1_2_0_, roles0_.roles_id as roles_id2_2_0_, approle1_.id as id1_0_1_, approle1_.name as name2_0_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
+2021-06-07 15:51:22.276  INFO 34000 --- [  restartedMain] com.own.cms.CmsApplication               : Starting CmsApplication on P11247 with PID 34000 (C:\learning\cms\target\classes started by kurtas in C:\learning\cms)
+2021-06-07 15:51:22.280  INFO 34000 --- [  restartedMain] com.own.cms.CmsApplication               : The following profiles are active: local
+2021-06-07 15:51:22.352  INFO 34000 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-07 15:51:22.352  INFO 34000 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-07 15:51:23.324  INFO 34000 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-07 15:51:23.427  INFO 34000 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92ms. Found 4 JPA repository interfaces.
+2021-06-07 15:51:24.588  INFO 34000 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2021-06-07 15:51:24.604  INFO 34000 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-07 15:51:24.605  INFO 34000 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-06-07 15:51:24.758  INFO 34000 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-07 15:51:24.759  INFO 34000 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2405 ms
+2021-06-07 15:51:24.971  INFO 34000 --- [  restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-07 15:51:25.123  INFO 34000 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-07 15:51:25.171  WARN 34000 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-07 15:51:25.204  INFO 34000 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2021-06-07 15:51:25.401  INFO 34000 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-06-07 15:51:25.512  INFO 34000 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3706d97f, org.springframework.security.web.context.SecurityContextPersistenceFilter@5eeb033e, org.springframework.security.web.header.HeaderWriterFilter@154ed362, org.springframework.security.web.authentication.logout.LogoutFilter@25f0f51b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@50bfc829, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@78d08a73, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ad7d897, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@230349df, org.springframework.security.web.session.SessionManagementFilter@2b71c598, org.springframework.security.web.access.ExceptionTranslationFilter@7402539b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@17b7a8]
+2021-06-07 15:51:25.552  INFO 34000 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-07 15:51:25.792  INFO 34000 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-07 15:51:25.823  INFO 34000 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-06-07 15:51:25.852  INFO 34000 --- [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-06-07 15:51:26.092  INFO 34000 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-07 15:51:26.145  INFO 34000 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2021-06-07 15:51:26.146  INFO 34000 --- [  restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2021-06-07 15:51:27.046  INFO 34000 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-07 15:51:27.055  INFO 34000 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-07 15:51:27.751  INFO 34000 --- [  restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2021-06-07 15:51:27.762  INFO 34000 --- [  restartedMain] com.own.cms.CmsApplication               : Started CmsApplication in 6.16 seconds (JVM running for 7.098)
+2021-06-07 15:51:35.371  INFO 34000 --- [nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-07 15:51:35.371  INFO 34000 --- [nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-07 15:51:35.383  INFO 34000 --- [nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+Hibernate: select appuser0_.id as id1_3_, appuser0_.email as email2_3_, appuser0_.first_name as first_na3_3_, appuser0_.last_name as last_nam4_3_, appuser0_.password as password5_3_, appuser0_.photo as photo6_3_, appuser0_.username as username7_3_ from app_user appuser0_ where appuser0_.username=?
+Hibernate: select roles0_.users_id as users_id1_4_0_, roles0_.roles_id as roles_id2_4_0_, approle1_.id as id1_2_1_, approle1_.name as name2_2_1_ from app_user_roles roles0_ inner join app_role approle1_ on roles0_.roles_id=approle1_.id where roles0_.users_id=?
+Hibernate: select apppage0_.id as id1_1_, apppage0_.article_id as article_5_1_, apppage0_.is_homepage as is_homep2_1_, apppage0_.title as title3_1_, apppage0_.url as url4_1_ from app_page apppage0_
+Hibernate: select apppage0_.id as id1_1_, apppage0_.article_id as article_5_1_, apppage0_.is_homepage as is_homep2_1_, apppage0_.title as title3_1_, apppage0_.url as url4_1_ from app_page apppage0_
+Hibernate: select apppage0_.id as id1_1_, apppage0_.article_id as article_5_1_, apppage0_.is_homepage as is_homep2_1_, apppage0_.title as title3_1_, apppage0_.url as url4_1_ from app_page apppage0_
+Hibernate: select apppage0_.id as id1_1_, apppage0_.article_id as article_5_1_, apppage0_.is_homepage as is_homep2_1_, apppage0_.title as title3_1_, apppage0_.url as url4_1_ from app_page apppage0_
+Hibernate: select apparticle0_.id as id1_0_, apparticle0_.content as content2_0_, apparticle0_.created_at as created_3_0_, apparticle0_.user_id as user_id6_0_, apparticle0_.title as title4_0_, apparticle0_.updated_at as updated_5_0_ from app_article apparticle0_
+Hibernate: select appuser0_.id as id1_3_0_, appuser0_.email as email2_3_0_, appuser0_.first_name as first_na3_3_0_, appuser0_.last_name as last_nam4_3_0_, appuser0_.password as password5_3_0_, appuser0_.photo as photo6_3_0_, appuser0_.username as username7_3_0_, roles1_.users_id as users_id1_4_1_, approle2_.id as roles_id2_4_1_, approle2_.id as id1_2_2_, approle2_.name as name2_2_2_ from app_user appuser0_ left outer join app_user_roles roles1_ on appuser0_.id=roles1_.users_id left outer join app_role approle2_ on roles1_.roles_id=approle2_.id where appuser0_.id=?
+Hibernate: select apppage0_.id as id1_1_, apppage0_.article_id as article_5_1_, apppage0_.is_homepage as is_homep2_1_, apppage0_.title as title3_1_, apppage0_.url as url4_1_ from app_page apppage0_
+article.id
+null
+Hibernate: select apppage0_.id as id1_1_, apppage0_.article_id as article_5_1_, apppage0_.is_homepage as is_homep2_1_, apppage0_.title as title3_1_, apppage0_.url as url4_1_ from app_page apppage0_
+article.id
+null
+Hibernate: select apppage0_.id as id1_1_, apppage0_.article_id as article_5_1_, apppage0_.is_homepage as is_homep2_1_, apppage0_.title as title3_1_, apppage0_.url as url4_1_ from app_page apppage0_
+Hibernate: select apppage0_.id as id1_1_, apppage0_.article_id as article_5_1_, apppage0_.is_homepage as is_homep2_1_, apppage0_.title as title3_1_, apppage0_.url as url4_1_ from app_page apppage0_
+Hibernate: select apppage0_.id as id1_1_, apppage0_.article_id as article_5_1_, apppage0_.is_homepage as is_homep2_1_, apppage0_.title as title3_1_, apppage0_.url as url4_1_ from app_page apppage0_
+Hibernate: select apppage0_.id as id1_1_, apppage0_.article_id as article_5_1_, apppage0_.is_homepage as is_homep2_1_, apppage0_.title as title3_1_, apppage0_.url as url4_1_ from app_page apppage0_
+Hibernate: select apparticle0_.id as id1_0_, apparticle0_.content as content2_0_, apparticle0_.created_at as created_3_0_, apparticle0_.user_id as user_id6_0_, apparticle0_.title as title4_0_, apparticle0_.updated_at as updated_5_0_ from app_article apparticle0_
+Hibernate: select appuser0_.id as id1_3_0_, appuser0_.email as email2_3_0_, appuser0_.first_name as first_na3_3_0_, appuser0_.last_name as last_nam4_3_0_, appuser0_.password as password5_3_0_, appuser0_.photo as photo6_3_0_, appuser0_.username as username7_3_0_, roles1_.users_id as users_id1_4_1_, approle2_.id as roles_id2_4_1_, approle2_.id as id1_2_2_, approle2_.name as name2_2_2_ from app_user appuser0_ left outer join app_user_roles roles1_ on appuser0_.id=roles1_.users_id left outer join app_role approle2_ on roles1_.roles_id=approle2_.id where appuser0_.id=?
+Hibernate: select apppage0_.id as id1_1_, apppage0_.article_id as article_5_1_, apppage0_.is_homepage as is_homep2_1_, apppage0_.title as title3_1_, apppage0_.url as url4_1_ from app_page apppage0_
+article.id
+null

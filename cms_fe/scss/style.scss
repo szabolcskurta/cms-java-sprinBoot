@@ -1,5 +1,8 @@
 @import  './dataTables.bootstrap4';
 @import './responsive.bootstrap4.min';
+@import '../_gulp/node_modules/jquery-confirm/dist/jquery-confirm.min';
+@import '../bootstrap-4/dist/css/bootstrap.min';
+@import '../js/lib/sortable-list-tree//css/style';
 body {
 	position:relative;
 }

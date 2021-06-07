@@ -18,6 +18,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.PreRemove;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
@@ -72,7 +74,11 @@ public class AppUser implements UserDetails{
     @Column(nullable = true)
     private String photo;
     
-    public Long getId() {
+    @OneToMany(mappedBy = "createdBy",targetEntity = AppArticle.class)
+    private List<AppArticle> articles = new ArrayList<AppArticle>();
+
+
+	public Long getId() {
         return id;
     }
 
@@ -153,10 +159,7 @@ public class AppUser implements UserDetails{
 		this.lastName = lastName;
 	}
 
-	@Override
-	public String toString() {
-		return "AppUser [id=" + id + ", username=" + username + ", password=" + password + ", roles=" + roles + "]";
-	}
+	
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -192,6 +195,22 @@ public class AppUser implements UserDetails{
 		return true;
 	}
 
+	public List<AppArticle> getArticles() {
+		return articles;
+	}
 
-    
+	public void setArticles(List<AppArticle> articles) {
+		this.articles = articles;
+	}
+	
+
+	@Override
+	public String toString() {
+		return "AppUser [id=" + id + ", username=" + username + ", password=" + password + ", roles=" + roles + "]";
+	}
+	
+	@PreRemove
+	private void preRemove() {
+	  this.articles.forEach(article-> article.setCreatedBy(null));
+	}
 }

@@ -54,13 +54,128 @@ $(document).ready(function() {
            			 {
              			
 						return "<a href=/admin/user/profile/" + data.id + " class='btn btn-primary'>Edit</a>"+
-							 " <a href=/admin/user/delete/" + data.id + " class='btn btn-danger'>Delete</a>";
+							 " <a  id='delete' href=# data-tableName='userList' data-href='/admin/user/delete' data-id="+data.id+" class='btn btn-danger'>Delete</a>";
             		}
 				
 				}
 			]
 		});
 	}
+	if ($("#articleList").length) {
+		$('#articleList').DataTable({
+			"processing": true,
+			"serverSide": true,
+			"paging": true,
+			"lengthChange": true,
+			"searching": true,
+			"ordering": true,
+			"info": true,
+			"autoWidth": false,
+			"responsive": true,
+			"ajax": {
+				"url": "/admin/article/list",
+				"type": "POST"
+			},
+			"columns": [
+				{ "data": "id" },
+				{ "data": "title" },
+				{ "data": "createdAt",render:function(data,type,row){
+					if(data){
+						var createdAt = new Date(data);
+						return createdAt.getFullYear()+" / "+(createdAt.getMonth()+1) +" / "+createdAt.getDate();
+					}
+					else{
+						return "";
+					}
+				}},
+				{ "data": "updatedAt",render:function(data,type,row){
+					if(data){
+						var updatedAt = new Date(data);
+						return updatedAt.getFullYear()+" / "+(updatedAt.getMonth()+1) +" / "+updatedAt.getDate();
+					}else{
+						return "";
+					}
+				
+				} },
+				{ "data": "createBy" },
+				{
+					data: null,
+					 render:function(data, type, row)
+           			 {
+             			
+						return "<a href=/admin/article/edit/" + data.id + " class='btn btn-primary'>Edit</a>"+
+							 " <a  id='delete' href=# data-tableName='articleList' data-href='/admin/article/delete' data-id="+data.id+" class='btn btn-danger'>Delete</a>";
+            		}
+				
+				}
+			]
+		});
+	}
+	if ($("#pageList").length) {
+		$('#pageList').DataTable({
+			"processing": true,
+			"serverSide": true,
+			"paging": true,
+			"lengthChange": true,
+			"searching": true,
+			"ordering": true,
+			"info": true,
+			"autoWidth": false,
+			"responsive": true,
+			"ajax": {
+				"url": "/admin/page/list",
+				"type": "POST"
+			},
+			"columns": [
+				{ "data": "id" },
+				{ "data": "url" },
+				
+				{ "data": "homepage",render:function(data,type,row){
+					var homepage = data;
+					console.log(data);
+					return homepage==true?"Yes":"No"
+				
+				}},
+				
+				{
+					data: null,
+					 render:function(data, type, row)
+           			 {
+             			
+						return "<a href=/admin/page/edit/" + data.id + " class='btn btn-primary'>Edit</a>"+
+							 " <a  id='delete' href=# data-tableName='pageList' data-href='/admin/page/delete' data-id="+data.id+" class='btn btn-danger'>Delete</a>";
+            		}
+				
+				}
+			]
+		});
+	}
+	$("body").on ("click","#delete",function(){
+			var id = $(this).attr("data-id");
+			var url = $(this).attr("data-href");
+			var tableName = "#"+$(this).attr("data-tableName")
+			$.confirm({
+			    title: 'Delete',
+			    content: 'Are you sure you want to delete?',
+			    buttons: {
+			        confirm: function () {
+					 
+					 console.log(id);
+			          $.post( url +"/"+ id)
+						  .done(function() {
+						   $(tableName).DataTable().ajax.reload();
+						  })
+						  .fail(function() {
+						    alert( "error" );
+						  });
+					},
+			        cancel: function () {
+			            $.alert('Canceled!');
+			        }
+			    }
+			});
+	});
+	
 });
 
 

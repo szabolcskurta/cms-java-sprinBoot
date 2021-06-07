@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,6 +71,7 @@ public class UserController {
 	public void initBinder(WebDataBinder binder) {
 		binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
 	}
+	
 
 	@GetMapping(value = "/add", name = "_add")
 	public String addUser(Model model) {
@@ -183,17 +185,26 @@ public class UserController {
 		return "admin/user/list";
 	}
 	
-	@RequestMapping(value="/delete/{id}", name="_delete",method = RequestMethod.GET)
-	public String deleteUser(@PathVariable Long id){
+	@Transactional
+	@RequestMapping(value="/delete/{id}", name="_delete",method = RequestMethod.POST)
+	public String deleteUser(@PathVariable Long id,RedirectAttributes redirAttrs){
 		
 		AppUser user = userRepo.findById(id).get();
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		AppUser loggedinUser =(AppUser) auth.getPrincipal();
+		if(loggedinUser.getId()==id) {
+			
+		}
 		if(user==null) {
 			throw new UserNotfoundException("User not found");
 		}
 		else {
 			userRepo.delete(user);
 		}
-		return "admin/user/list";
+		
+		redirAttrs.addFlashAttribute("message", "User Deleted successfuly");
+		return "redirect:/admin/user/list";
 	}	
 	
 	@ExceptionHandler(FileStorageException.class)
