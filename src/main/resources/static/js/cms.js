@@ -17013,7 +17013,152 @@ return jQuery;
 
 })));
 //# sourceMappingURL=bootstrap.js.map
-;/*! DataTables 1.10.20
+;/**
+ * 
+ */
+function userList(){
+	if ($("#userList").length) {
+		$('#userList').DataTable({
+			"processing": true,
+			"serverSide": true,
+			"paging": true,
+			"lengthChange": true,
+			"searching": true,
+			"ordering": true,
+			"info": true,
+			"autoWidth": false,
+			"responsive": true,
+			"ajax": {
+				"url": "/admin/user/list",
+				"type": "POST"
+			},
+			"columns": [
+				{ "data": "id" },
+				{ "data": "firstName" },
+				{ "data": "lastName" },
+				{ "data": "username" },
+				{ "data": "email" },
+				{
+					data: null,
+					 render:function(data, type, row)
+           			 {
+             			
+						return "<a href=/admin/user/profile/" + data.id + " class='btn btn-primary'>Edit</a>"+
+							 " <a  id='delete' href=# data-tableName='userList' data-href='/admin/user/delete' data-id="+data.id+" class='btn btn-danger'>Delete</a>";
+            		}
+				
+				}
+			]
+		});
+	}
+
+};/**
+ * 
+ */
+function article(){
+	if ($("#articleList").length) {
+		$('#articleList').DataTable({
+			"processing": true,
+			"serverSide": true,
+			"paging": true,
+			"lengthChange": true,
+			"searching": true,
+			"ordering": true,
+			"info": true,
+			"autoWidth": false,
+			"responsive": true,
+			"ajax": {
+				"url": "/admin/article/list",
+				"type": "POST"
+			},
+			"columns": [
+				{ "data": "id" },
+				{ "data": "title" },
+				{ "data": "createdAt",render:function(data,type,row){
+					if(data){
+						var createdAt = new Date(data);
+						return createdAt.getFullYear()+" / "+(createdAt.getMonth()+1) +" / "+createdAt.getDate();
+					}
+					else{
+						return "";
+					}
+				}},
+				{ "data": "updatedAt",render:function(data,type,row){
+					if(data){
+						var updatedAt = new Date(data);
+						return updatedAt.getFullYear()+" / "+(updatedAt.getMonth()+1) +" / "+updatedAt.getDate();
+					}else{
+						return "";
+					}
+				
+				} },
+				{ "data": "createBy" },
+				{
+					data: null,
+					 render:function(data, type, row)
+           			 {
+             			
+						return "<a href=/admin/article/edit/" + data.id + " class='btn btn-primary'>Edit</a>"+
+							 " <a  id='delete' href=# data-tableName='articleList' data-href='/admin/article/delete' data-id="+data.id+" class='btn btn-danger'>Delete</a>";
+            		}
+				
+				}
+			]
+		});
+	}
+};/**
+ * 
+ */
+function page(){
+	if ($("#pageList").length) {
+		$('#pageList').DataTable({
+			"processing": true,
+			"serverSide": true,
+			"paging": true,
+			"lengthChange": true,
+			"searching": true,
+			"ordering": true,
+			"info": true,
+			"autoWidth": false,
+			"responsive": true,
+			"ajax": {
+				"url": "/admin/page/list",
+				"type": "POST"
+			},
+			"columns": [
+				{ "data": "id" },
+				{ "data": "url" },
+				
+				{ "data": "homepage",render:function(data,type,row){
+					var homepage = data;
+					console.log(data);
+					return homepage==true?"Yes":"No"
+				
+				}},
+				
+				{
+					data: null,
+					 render:function(data, type, row)
+           			 {
+             			
+						return "<a href=/admin/page/edit/" + data.id + " class='btn btn-primary'>Edit</a>"+
+							 " <a  id='delete' href=# data-tableName='pageList' data-href='/admin/page/delete' data-id="+data.id+" class='btn btn-danger'>Delete</a>";
+            		}
+				
+				}
+			]
+		});
+	}
+	
+};/**
+ * 
+ */
+
+function flasMessage(){
+ 	if($(".alert").length){
+		$(".alert").delay(5000).slideUp(300);
+	}
+};/*! DataTables 1.10.20
  * ©2008-2019 SpryMedia Ltd - datatables.net/license
  */
 
@@ -34047,129 +34192,9 @@ $(document).ready(function() {
 			$(this).next('.custom-file-label').html(fileName);
 		})
 	}
-	if ($("#userList").length) {
-		$('#userList').DataTable({
-			"processing": true,
-			"serverSide": true,
-			"paging": true,
-			"lengthChange": true,
-			"searching": true,
-			"ordering": true,
-			"info": true,
-			"autoWidth": false,
-			"responsive": true,
-			"ajax": {
-				"url": "/admin/user/list",
-				"type": "POST"
-			},
-			"columns": [
-				{ "data": "id" },
-				{ "data": "firstName" },
-				{ "data": "firstName" },
-				{ "data": "username" },
-				{ "data": "email" },
-				{
-					data: null,
-					 render:function(data, type, row)
-           			 {
-             			
-						return "<a href=/admin/user/profile/" + data.id + " class='btn btn-primary'>Edit</a>"+
-							 " <a  id='delete' href=# data-tableName='userList' data-href='/admin/user/delete' data-id="+data.id+" class='btn btn-danger'>Delete</a>";
-            		}
-				
-				}
-			]
-		});
-	}
-	if ($("#articleList").length) {
-		$('#articleList').DataTable({
-			"processing": true,
-			"serverSide": true,
-			"paging": true,
-			"lengthChange": true,
-			"searching": true,
-			"ordering": true,
-			"info": true,
-			"autoWidth": false,
-			"responsive": true,
-			"ajax": {
-				"url": "/admin/article/list",
-				"type": "POST"
-			},
-			"columns": [
-				{ "data": "id" },
-				{ "data": "title" },
-				{ "data": "createdAt",render:function(data,type,row){
-					if(data){
-						var createdAt = new Date(data);
-						return createdAt.getFullYear()+" / "+(createdAt.getMonth()+1) +" / "+createdAt.getDate();
-					}
-					else{
-						return "";
-					}
-				}},
-				{ "data": "updatedAt",render:function(data,type,row){
-					if(data){
-						var updatedAt = new Date(data);
-						return updatedAt.getFullYear()+" / "+(updatedAt.getMonth()+1) +" / "+updatedAt.getDate();
-					}else{
-						return "";
-					}
-				
-				} },
-				{ "data": "createBy" },
-				{
-					data: null,
-					 render:function(data, type, row)
-           			 {
-             			
-						return "<a href=/admin/article/edit/" + data.id + " class='btn btn-primary'>Edit</a>"+
-							 " <a  id='delete' href=# data-tableName='articleList' data-href='/admin/article/delete' data-id="+data.id+" class='btn btn-danger'>Delete</a>";
-            		}
-				
-				}
-			]
-		});
-	}
-	if ($("#pageList").length) {
-		$('#pageList').DataTable({
-			"processing": true,
-			"serverSide": true,
-			"paging": true,
-			"lengthChange": true,
-			"searching": true,
-			"ordering": true,
-			"info": true,
-			"autoWidth": false,
-			"responsive": true,
-			"ajax": {
-				"url": "/admin/page/list",
-				"type": "POST"
-			},
-			"columns": [
-				{ "data": "id" },
-				{ "data": "url" },
-				
-				{ "data": "homepage",render:function(data,type,row){
-					var homepage = data;
-					console.log(data);
-					return homepage==true?"Yes":"No"
-				
-				}},
-				
-				{
-					data: null,
-					 render:function(data, type, row)
-           			 {
-             			
-						return "<a href=/admin/page/edit/" + data.id + " class='btn btn-primary'>Edit</a>"+
-							 " <a  id='delete' href=# data-tableName='pageList' data-href='/admin/page/delete' data-id="+data.id+" class='btn btn-danger'>Delete</a>";
-            		}
-				
-				}
-			]
-		});
-	}
+	userList();
+	article();
+	page();
 	$("body").on ("click","#delete",function(){
 			var id = $(this).attr("data-id");
 			var url = $(this).attr("data-href");
@@ -34182,11 +34207,17 @@ $(document).ready(function() {
 					 
 					 console.log(id);
 			          $.post( url +"/"+ id)
-						  .done(function() {
+						  .done(function(data) {
 						   $(tableName).DataTable().ajax.reload();
+							let messagData = JSON.parse(JSON.stringify(data));
+							
+							let  html = "<div class='alert  alert-danger' >"+messagData.message+"</div>";
+							$(".content > .container-fluid ").find("#alert").prepend(html).ready(function(){
+									flasMessage();
+							})	
 						  })
 						  .fail(function() {
-						    alert( "error" );
+						   
 						  });
 					},
 			        cancel: function () {
@@ -34196,6 +34227,19 @@ $(document).ready(function() {
 			});
 	});
 	
+		$("body").on ("change","#pageType",function(){
+						 console.log("changed");
+			    $( "#pageType option:selected" ).each(function() {
+			      	
+					if( $( this ).val() === "LINK_TYPE"){
+						console.log($( this ).val());
+						 $("#article option[selected] ").removeAttr("selected");
+				  }
+			})
+	  
+					$("#article").toggleClass('d-none d-block');			
+		});
+	flasMessage();
 });
 
 

@@ -2,11 +2,14 @@
 	"../js/jquery.js",
 	"../js/adminlte.js",
 	"../js/bootstrap.js",
+	"../js/user.js",
+	"../js/article.js",
+	"../js/page.js",
+	"../js/flashmessage.js",
 	"../js/lib/datatables/jquery.dataTables.js",
 	"../js/lib/datatables-bs4/js/dataTables.bootstrap4.js",
 	"../js/lib/datatables-responsive/js/dataTables.responsive.js",
 	"../js/lib/datatables-responsive/js/responsive.bootstrap4.js",
-	
 	"./node_modules/jquery-confirm/dist/jquery-confirm.min.js",
 	"../js/app.js"
 ]

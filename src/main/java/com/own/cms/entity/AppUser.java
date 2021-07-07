@@ -7,11 +7,14 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,29 +35,33 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.own.cms.entity.AppUserGroup;
 
 @Entity
 @Table( name="app_user")
-public class AppUser implements UserDetails{
+public class AppUser implements  UserDetails{
+	
 
+	
+	
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
 	@Column
-	@NotBlank(message ="The field mandatory")
+	@NotBlank(groups= {AppUserGroup.class},message ="The field mandatory")
 	private String username;
 	
 	@Column
     private String password;
 	
 	@Column
-	@NotBlank(message ="The field mandatory")
+	@NotBlank(groups= {AppUserGroup.class},message ="The field mandatory")
 	private String firstName;
 	
 	@Column
-	@NotBlank(message ="The field mandatory")
+	@NotBlank(groups= {AppUserGroup.class},message ="The field mandatory")
 	private String lastName;
 
     @Transient
@@ -74,9 +81,24 @@ public class AppUser implements UserDetails{
     @Column(nullable = true)
     private String photo;
     
-    @OneToMany(mappedBy = "createdBy",targetEntity = AppArticle.class)
+    @Column(name = "reset_password_token")
+    private String resetPasswordToken;
+    
+    @OneToMany(mappedBy = "createdBy",cascade = CascadeType.MERGE,targetEntity = AppArticle.class)
     private List<AppArticle> articles = new ArrayList<AppArticle>();
-
+    
+//    @Column(name="auth_provider")
+//    @Enumerated(EnumType.STRING)
+//    private AuthenticationProvider provider;
+// 
+//    public AuthenticationProvider getProvider() {
+//        return provider;
+//    }
+// 
+//    public void setProvider(AuthenticationProvider provider) {
+//        this.provider = provider;
+//    }
+     
 
 	public Long getId() {
         return id;
@@ -113,6 +135,7 @@ public class AppUser implements UserDetails{
     public List<AppRole> getRoles() {
         return roles;
     }
+ 
 
     public void setRoles(List<AppRole> roles) {
         this.roles = roles;
@@ -203,6 +226,14 @@ public class AppUser implements UserDetails{
 		this.articles = articles;
 	}
 	
+	
+	public String getResetPasswordToken() {
+		return resetPasswordToken;
+	}
+
+	public void setResetPasswordToken(String resetPasswordToken) {
+		this.resetPasswordToken = resetPasswordToken;
+	}
 
 	@Override
 	public String toString() {
@@ -213,4 +244,5 @@ public class AppUser implements UserDetails{
 	private void preRemove() {
 	  this.articles.forEach(article-> article.setCreatedBy(null));
 	}
+
 }

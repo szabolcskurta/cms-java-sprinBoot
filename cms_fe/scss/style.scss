@@ -6,3 +6,9 @@
 body {
 	position:relative;
 }
+.thumbnail{
+	min-height: 200px;
+	.img-thumbnail{
+		max-height:  200px;
+	}
+}

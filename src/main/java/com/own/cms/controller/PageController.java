@@ -19,6 +19,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,8 +32,10 @@ import com.own.cms.entity.AppArticle;
 import com.own.cms.entity.AppArticleDTO;
 import com.own.cms.entity.AppPage;
 import com.own.cms.entity.AppPageDTO;
+import com.own.cms.entity.AppPageGroup;
+import com.own.cms.entity.AppPageType;
 import com.own.cms.exception.PageNotFoundException;
-import com.own.cms.exception.UserNotfoundException;
+import com.own.cms.exception.UserNotFoundException;
 import com.own.cms.repository.AppPageRepository;
 import com.own.cms.repository.AppArticleRepository;
 
@@ -87,17 +90,17 @@ public class PageController {
 
 	@Transactional
 	@PostMapping(value = "/add", name = "_save")
-	public String savePage(@Valid @ModelAttribute("page") AppPage page, Errors error) {
-
+	public String savePage(@Validated({ AppPageGroup.class }) @ModelAttribute("page") AppPage page,Errors error) {
+	
 		if (error.getErrorCount() > 0) {
-			System.out.println(error.getFieldError().getField());
-			System.out.println(error.getFieldError().getRejectedValue());
+			System.out.println("eror:"+error.getAllErrors().toString());
 			return "admin/page/edit";
 		}
-		System.out.println(page.isHomepage());
+		
 		if (page.isHomepage()) {
-			pageRepository.setHompagefalse();
+			pageRepository.setHompagefalse(page.getId());
 		}
+	
 		pageRepository.save(page);
 		return "redirect:/admin/page/list";
 	}
@@ -115,18 +118,26 @@ public class PageController {
 
 	@Transactional
 	@PostMapping(value = "/edit/{id}", name = "_edit")
-	public String updateArticle(@Valid @ModelAttribute("page") AppPage page, Model model, Errors error) {
+	public String updateArticle(@Valid @ModelAttribute("page") AppPage page, Model model, Errors error,@PathVariable Long id) {
+		
 		if (error.getErrorCount() > 0) {
 			List<AppArticle> allArticle = articleRepository.findAll();
 			model.addAttribute("articleList", allArticle);
 			return "admin/article/edit";
 		} else {
+		
+			System.out.println("page: "+page.toString());
+			AppArticle article = articleRepository.getOne(page.getArticle().getId());
+			page.setArticle(article);
 			if (page.isHomepage()) {
-				pageRepository.setHompagefalse();
-			} else {
-				page.setHomepage(true);
+				pageRepository.setHompagefalse(page.getId());
+					
 			}
-			pageRepository.save(page);
+			if(page.getPageType() == AppPageType.LINK_TYPE) {
+				page.setArticle(null);
+			}
+			pageRepository.saveAndFlush(page);
+			
 		}
 		return "redirect:/admin/page/list";
 	}
@@ -151,6 +162,7 @@ public class PageController {
 	public void addAttributes(Map<String, Object> model) {
 		List<AppPage> allArticle = pageRepository.findAll();
 		model.put("articleList", allArticle);
+		model.put("pagetype", AppPageType.values());
 	}
 
 }

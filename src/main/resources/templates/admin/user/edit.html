@@ -38,7 +38,7 @@
 							<h1 class="m-0 text-dark">User profile edit</h1>
 						</div>
 						<div th:if="!${user.id}">
-							<h1 class="m-0 text-dark">Add new</h1>
+							<h1 class="m-0 text-dark">Add new user</h1>
 						</div>
 					</div>
 					<!-- /.col -->
@@ -107,7 +107,16 @@
 									</div>
 									
 									
-									
+									<div class="form-group" th:object="${articleList}">
+										<label for="article">User Role</label>
+										<select class="form-control" id="role" name="user.roles" multiple th:field="${user.roles}">
+											<option th:each="roleList : ${roleList}"
+													th:value="${roleList.id}"  
+												
+												th:utext="${roleList.name}"></option>
+										</select>
+
+									</div>
 									<div th:if="${user.id}" class="form-group">
 										 <div class="form-group">
 											<label for="exampleInputFile">Profile Image</label>
@@ -132,7 +141,7 @@
 								<!-- /.card-body -->
 
 								<div class="card-footer">
-									<button type="submit" class="btn btn-primary">Submit</button>
+									<button type="submit" class="btn btn-primary">Save</button>
 								</div>
 							</form>
 						</div>

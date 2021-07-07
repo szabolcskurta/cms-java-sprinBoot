@@ -45,7 +45,7 @@ public class AdminController {
 	public String Dashboard(Model model, Principal principal, Authentication authentication) {
 		// User loginedUser = (User) ((Authentication) principal).getPrincipal();
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-
+        
 		AppUser user = userRepo.findByUsername(auth.getName());
 		model.addAttribute("user", user);
 		return "admin/dashboard";

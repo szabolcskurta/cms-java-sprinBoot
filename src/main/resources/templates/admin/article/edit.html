@@ -34,7 +34,7 @@
 				<div class="row mb-2">
 					<div class="col-sm-6">
 					   <div th:if="${article.id}">
-							<h1 class="m-0 text-dark">User profile edit</h1>
+							<h1 class="m-0 text-dark" >Article edit [[${article.title}]] </h1>
 						</div>
 						<div th:if="!${article.id}">
 							<h1 class="m-0 text-dark">Add new</h1>
@@ -59,7 +59,7 @@
 		<div class="content">
 			<div class="container-fluid">
 				<div class="row">
-					<div>
+					<div >
 
 
 						<div class="card card-primary">
@@ -88,6 +88,7 @@
 										
 										<p class="alert alert-danger" th:if="${#fields.hasErrors('content')}" th:errors="*{content}" /> 
 									<p class="alert alert-danger" th:if="${#fields.hasErrors('createdAt')}" th:errors="*{createdAt}" /> 
+									<input type='file' name='fileupload' id='fileupload' style='display: none;'>
 									</div>
 									<input type="hidden" th:field="${article.createdBy.id}"/>
 									<input type="hidden" th:field="${article.createdAt}"> 

@@ -7399,3 +7399,8 @@ body {
 
 body {
   position: relative; }
+
+.thumbnail {
+  min-height: 200px; }
+  .thumbnail .img-thumbnail {
+    max-height: 200px; }

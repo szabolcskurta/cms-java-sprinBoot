@@ -8,5 +8,6 @@ import com.own.cms.entity.AppUser;
 
 public interface AppUserRepository extends JpaRepository<AppUser, Long>{
 	AppUser findByUsername(String username);
-	
+	AppUser findByEmail(String email);			
+	AppUser findByResetPasswordToken(String token);
 }

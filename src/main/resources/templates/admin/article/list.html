@@ -54,16 +54,15 @@
 		<!-- Main content -->
 		<div class="content">
 			<div class="container-fluid">
+				<div class="alert alert-success" th:if="${message}" th:text="${message}" role="alert"></div>
 				<div class="row">
-					<div>
-					<div class="alert alert-success" th:if="${message}" th:text="${message}" role="alert">
-						  
-					</div>
+					
+					<div class="col-12">
 					
 						<div class="card">
 							<div class="card-header">
 									<h3 class="card-title">Article list </h3>
-									<a class="btn btn-primary float-right" th:href="@{/admin/article/add}" >Add new user</a>
+									<a class="btn btn-primary float-right" th:href="@{/admin/article/add}" >Add new article</a>
 							</div>
 							<div class="card-body">
 								<table id="articleList" class="table table-bordered table-hover">
@@ -82,9 +81,8 @@
 							</div>
 						</div>
 
-
-
 					</div>
+
 				</div>
 				<!-- /.row -->
 			</div>

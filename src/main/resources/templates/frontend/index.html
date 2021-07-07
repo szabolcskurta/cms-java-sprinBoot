@@ -25,7 +25,12 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li th:each="menuItem : ${menu}"  class="nav-item active">
-						<a class="nav-link" th:href="${menuItem.url}" th:utext="${menuItem.title}"></a>
+						
+							<a class="nav-link"  th:if="${menuItem.pageType.toString() =='ARTICLE_TYPE'}" th:href="${menuItem.url}" th:utext="${menuItem.pageTitle}"></a>
+						
+						
+							<a class="nav-link" th:href="${'http://'+menuItem.url}" th:if="${menuItem.pageType.toString() =='LINK_TYPE'}" target="_blank" th:utext="${menuItem.pageTitle}"></a>
+							
 					</li>	
 				</ul>
 			</div>

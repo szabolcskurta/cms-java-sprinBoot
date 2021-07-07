@@ -3,6 +3,8 @@ package com.own.cms.utils;
 
 import java.util.Collection;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 public class WebUtils {
@@ -27,4 +29,8 @@ public class WebUtils {
 	        }
 	        return sb.toString();
 	    }
+	 public static String getSiteURL(HttpServletRequest request) {
+	        String siteURL = request.getRequestURL().toString();
+	        return siteURL.replace(request.getServletPath(), "");
+	 }
 }

@@ -22,6 +22,7 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.OnDelete;
@@ -29,7 +30,7 @@ import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.access.prepost.PreAuthorize;
 import com.own.cms.entity.AppPage;
-
+import com.own.cms.entity.AppArticleGroup;
 @Entity
 @Table( name="app_article")
 public class AppArticle {
@@ -39,8 +40,8 @@ public class AppArticle {
     private Long id;
 	
 	@Column
-	@NotBlank(message ="The field mandatory")
-	private String title;
+	@NotBlank(groups= {AppArticleGroup.class},message ="The field mandatory")
+	private String title=" ";
 	
 	@Lob
 	private String content;
@@ -56,13 +57,18 @@ public class AppArticle {
 	@Column
 	private Date updatedAt;
 	
-	@ManyToOne(targetEntity = AppUser.class,fetch = FetchType.EAGER)
-	@JoinColumn(name = "user_id",nullable = true)
+	@ManyToOne(targetEntity = AppUser.class,cascade = {CascadeType.REFRESH,CascadeType.MERGE},fetch = FetchType.EAGER)
+	@JoinColumn(name = "user_id",insertable = true,updatable = true,referencedColumnName = "id")
 	private  AppUser createdBy;
 	
-	@OneToMany(mappedBy = "article" ,targetEntity = AppPage.class)
+	@OneToMany(mappedBy = "article" ,cascade = CascadeType.MERGE,targetEntity = AppPage.class)
 	private List<AppPage> pageList = new ArrayList<AppPage>();
-	
+	 
+	public AppArticle() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -119,21 +125,32 @@ public class AppArticle {
 	public void setPageList(List<AppPage> pageList) {
 		this.pageList = pageList;
 	}
-
+	
 	@PrePersist
 	public void prePersist() {
-		if (this.createdAt== null ) 
-			this.createdAt = new Date();
+		this.createdAt = new Date();
 	}
+
+	
 	@PreUpdate
-	public void prePerUpdate() {
+	public void preUpdate() {
+		this.createdBy = this.getCreatedBy();
 		this.updatedAt = new Date();
+		this.pageList =this.getPageList();
 	}
 	
 	@PreRemove
 	public void setPageNull(){
 		this.pageList.forEach(page->page.setArticle(null));
 	}
+
+	@Override
+	public String toString() {
+		return "AppArticle [id=" + id + ", title=" + title + ", content=" + content + ", createdAt=" + createdAt
+				+ ", updatedAt=" + updatedAt + ", createdBy=" + createdBy + ", pageList=" + pageList + "]";
+	}
+	
+	
 	
 	
 }
