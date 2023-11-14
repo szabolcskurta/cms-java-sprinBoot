@@ -59,10 +59,7 @@ public class UserController {
 	private AppUserRepository userRepo;
 	@Autowired
 	private AppRoleRepository roleRepo;
-
-	@Autowired
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
-
+	
 	@Autowired
 	private FileService fileService;
 
@@ -97,7 +94,7 @@ public class UserController {
 		List<AppRole> roles = new ArrayList<AppRole>();
 		roles.add(role);
 		
-		appUser.setPassword(bCryptPasswordEncoder.encode(appUser.getPlainPassword()));
+		appUser.setPassword(new BCryptPasswordEncoder().encode(appUser.getPlainPassword()));
 		appUser.setRoles(roles);
 		System.out.println(appUser);
 		userRepo.save(appUser);
@@ -132,7 +129,7 @@ public class UserController {
 			if(appUser.getPlainPassword() == null) {
 				appUser.setPassword(user.getPassword());
 			}else {
-				appUser.setPassword(bCryptPasswordEncoder.encode(appUser.getPlainPassword()));
+				appUser.setPassword(new BCryptPasswordEncoder().encode(appUser.getPlainPassword()));
 			}
 			
 			
