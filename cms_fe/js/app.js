@@ -1,8 +1,6 @@
 
 $(document).ready(function() {
 
-
-
 	if ($("#uploadImg").length) {
 		$("#uploadImg").click(function() {
 			var formData = new FormData();

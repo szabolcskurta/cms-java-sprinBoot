@@ -9,17 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -65,8 +55,12 @@ public class AppUser implements UserDetails{
     @Email
     private String email;
 
-    @ManyToMany(fetch = FetchType.EAGER) 
-    private List<AppRole> roles;
+	@ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+	@JoinTable(
+			name="users_roles",
+			joinColumns={@JoinColumn(name="USER_ID", referencedColumnName="ID")},
+			inverseJoinColumns={@JoinColumn(name="ROLE_ID", referencedColumnName="ID")})
+	private List<AppRole> roles = new ArrayList<>();
     
     
     @Column(nullable = true)

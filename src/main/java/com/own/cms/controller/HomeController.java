@@ -8,7 +8,7 @@ public class HomeController {
 
 	@RequestMapping(value ="/" ,name="home")
 	public String home(){
-		return "admin/dashboard";
+		return "frontend/index";
 	}
 
 }
